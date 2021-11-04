@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+	<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Earth Life</title>
+		</head>
+        <style>
+		   
+		   body
+          {
+              background: white;	
+		  }
+        
+          h1
+          {
+             color:rgb(156, 95, 156);
+             text-align:center;
+             font-family: fantasy;
+             font-size: 2em;
+             font-style: italic;
+          } 
+                
+          .color-blue
+          {
+			  font-size: 20px;            
+			  font-family:"Helvetica", sans-serif;
+              color:rgb(23, 147, 230);
+              font-weight: bold;
+              text-decoration: underline;
+          }
+          
+          .color-grey
+          {
+		      font-size: 20px;
+              font-family:"Helvetica", sans-serif;
+              color:rgb(139, 141, 145);
+              font-weight: bold;
+              text-decoration: underline;
+          }
+           .color-green
+           {
+		      font-size: 20px;
+              font-family:"Helvetica", sans-serif;
+              color:green;
+              font-weight: bold;
+              text-decoration: underline;
+          }
+           .color-red
+           {
+		      font-size: 20px;
+              font-family:"Helvetica", sans-serif;
+              color:rgb(247, 13, 24);
+              font-weight: bold;
+              text-decoration: underline;
+          }
+		  
+		 #container 
+		 {
+            width: auto;
+            border-top: 10px solid purple;
+            padding: 15px;
+         }
+		 
+         th:hover,th:active, th:focus
+         {
+                background-color: rgb(214, 255, 8);
+         }
+		 
+		 table
+         {
+			margin: auto;
+             
+         }
+		 
+		 .footer
+		 {
+            background-color: rgb(186, 222, 187);
+			text-align:center;
+		 }
+		 
+        </style>
+    <body>
+	
+	 <div id="container">
+        
+        <h1>The Earth's Life</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th class="color-blue">Weather</th>
+                    <th class="color-grey">Industrial</th>
+                    <th class="color-green">Deforestation</th>
+                    <th class ="color-red">Natural Disaster</th>
+
+                </tr>
+            </thead>
+        </table>
+      
+	    <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+        <script type='text/javascript'>google.load('visualization', '1', {'packages': ['geochart']});
+		google.setOnLoadCallback(drawVisualization);
+		function drawVisualization() 
+		{
+		  var data = new google.visualization.DataTable();
+
+		 data.addColumn('string', 'Country');
+		 data.addColumn('number', 'Value');
+		 data.addColumn({type:'string', role:'tooltip'});var ivalue = new Array();
+
+		 data.addRows([[{v:'US',f:'United States of America'},0,'21% of of the forest gone']]);
+		 ivalue['US'] = '';
+
+		 data.addRows([[{v:'GB',f:'United Kingdom'},1,'7% of visits']]);
+		 ivalue['GB'] = '';
+
+		 data.addRows([[{v:'DE',f:'Germany'},2,'6% of visits']]);
+		 ivalue['DE'] = '';
+
+		 data.addRows([[{v:'FR',f:'France'},3,'5% of visits']]);
+		 ivalue['FR'] = '';
+
+		 data.addRows([[{v:'ES',f:'Spain'},4,'5% of visits']]);
+		 ivalue['ES'] = '';
+
+		 data.addRows([[{v:'CA',f:'Canada'},5,'The Average Temperature is: 95 degrees']]);
+		 ivalue['CA'] = '';
+
+		 data.addRows([[{v:'IT',f:'Italy'},6,'4% of visits']]);
+		 ivalue['IT'] = '';
+
+		 data.addRows([[{v:'NL',f:'The Netherlands'},7,'4% of visits']]);
+		 ivalue['NL'] = '';
+
+		 data.addRows([[{v:'BR',f:'Brazil'},8,'4 volcano eruption']]);
+		 ivalue['BR'] = '';
+
+		 data.addRows([[{v:'TR',f:'Turkey'},9,'3% of visits']]);
+		 ivalue['TR'] = '';
+
+		 data.addRows([[{v:'IN',f:'India'},10,'3% of visits']]);
+		 ivalue['IN'] = '';
+
+		 data.addRows([[{v:'RU',f:'Russia'},11,'3% of visits']]);
+		 ivalue['RU'] = '';
+
+		 data.addRows([[{v:'AU',f:'Australia'},12,'2% of visits']]);
+		 ivalue['AU'] = '';
+		
+		 var options = 
+		 {
+		 backgroundColor: {stroke:'#FFFFFF' ,strokeWidth:0 },
+		 colorAxis:  {minValue: 0, maxValue: 12,  colors: ['#D95F0E','#FEC44F','#FEC44F','#FEC44F','#FEC44F',
+		 '#FEC44F','#FEC44F','#FEC44F','#FEC44F','#FFF7BC','#FFF7BC','#FFF7BC','#FFF7BC']},
+		 legend: 'none',
+		 backgroundColor: {stroke:'#FFFFFF' ,strokeWidth:0 },
+		 datalessRegionColor: '#F5F0E7',
+		 displayMode: 'regions',
+		 enableRegionInteractivity: 'true',
+		 resolution: 'countries',
+		 sizeAxis: {minValue: 1, maxValue:1,minSize:10,  maxSize: 10},
+		 region:'world',
+		 keepAspectRatio: true,
+		 tooltip: {textStyle: {color: '#444444'}, trigger:'focus'}
+
+		 };
+		 
+		 var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+		 chart.draw(data, options);
+		 }
+		 </script>
+		 <div id='visualization'></div>    
+		 
+		 
+		  <div class="footer">
+        <p>This site was created by Loic Konan, TX,USA.
+			You can find my LinkedIn </p>
+		</div>
+		 
+      
+		</body>
+	</html>
